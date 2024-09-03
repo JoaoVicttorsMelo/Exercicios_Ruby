@@ -33,7 +33,7 @@ class Livro
   end
 
   def calcular_multa
-    if 2 > 1
+    if @data_devolucao < Time.now
       dias_atraso = (@data_devolucao - Time.now) / (24 * 60 * 60)
       multa = dias_atraso*5
       puts "Você deveria devolver o livro na data: #{@data_devolucao.strftime("%d/%m/%Y")}, porem não devolveu, atrasando no total de dias: #{dias_atraso.round}
